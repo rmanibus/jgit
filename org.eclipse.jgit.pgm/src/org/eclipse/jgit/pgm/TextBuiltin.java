@@ -36,7 +36,7 @@ import org.eclipse.jgit.pgm.internal.CLIText;
 import org.eclipse.jgit.pgm.internal.SshDriver;
 import org.eclipse.jgit.pgm.opt.CmdLineParser;
 import org.eclipse.jgit.revwalk.RevWalk;
-import org.eclipse.jgit.transport.JschConfigSessionFactory;
+import org.eclipse.jgit.sch.transport.JschConfigSessionFactory;
 import org.eclipse.jgit.transport.SshSessionFactory;
 import org.eclipse.jgit.transport.sshd.DefaultProxyDataFactory;
 import org.eclipse.jgit.transport.sshd.JGitKeyCache;

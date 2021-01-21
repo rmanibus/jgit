@@ -9,7 +9,7 @@
  */
 
 //TODO(ms): move to org.eclipse.jgit.ssh.jsch in 6.0
-package org.eclipse.jgit.transport;
+package org.eclipse.jgit.sch.transport;
 
 import static org.eclipse.jgit.internal.transport.ssh.OpenSshConfigFile.positive;
 
@@ -20,6 +20,8 @@ import java.util.TreeMap;
 
 import org.eclipse.jgit.internal.transport.ssh.OpenSshConfigFile;
 import org.eclipse.jgit.internal.transport.ssh.OpenSshConfigFile.HostEntry;
+import org.eclipse.jgit.transport.SshConstants;
+import org.eclipse.jgit.transport.SshSessionFactory;
 import org.eclipse.jgit.util.FS;
 
 import com.jcraft.jsch.ConfigRepository;
@@ -40,7 +42,7 @@ import com.jcraft.jsch.ConfigRepository;
  * <p>
  * This parser makes the critical options available to
  * {@link org.eclipse.jgit.transport.SshSessionFactory} via
- * {@link org.eclipse.jgit.transport.OpenSshConfig.Host} objects returned
+ * {@link OpenSshConfig.Host} objects returned
  * by {@link #lookup(String)}, and implements a fully conforming
  * {@link com.jcraft.jsch.ConfigRepository} providing
  * {@link com.jcraft.jsch.ConfigRepository.Config}s via

@@ -16,7 +16,7 @@
  */
 
 //TODO(ms): move to org.eclipse.jgit.ssh.jsch in 6.0
-package org.eclipse.jgit.transport;
+package org.eclipse.jgit.sch.transport;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -39,6 +39,7 @@ import java.util.stream.Stream;
 
 import org.eclipse.jgit.errors.TransportException;
 import org.eclipse.jgit.internal.transport.jsch.JSchText;
+import org.eclipse.jgit.transport.*;
 import org.eclipse.jgit.util.FS;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,7 +61,7 @@ import com.jcraft.jsch.Session;
  * used by C Git.
  * <p>
  * The factory does not provide UI behavior. Override the method
- * {@link #configure(org.eclipse.jgit.transport.OpenSshConfig.Host, Session)} to
+ * {@link #configure(OpenSshConfig.Host, Session)} to
  * supply appropriate {@link com.jcraft.jsch.UserInfo} to the session.
  */
 public class JschConfigSessionFactory extends SshSessionFactory {
@@ -87,7 +88,7 @@ public class JschConfigSessionFactory extends SshSessionFactory {
 	/** {@inheritDoc} */
 	@Override
 	public synchronized RemoteSession getSession(URIish uri,
-			CredentialsProvider credentialsProvider, FS fs, int tms)
+                                                 CredentialsProvider credentialsProvider, FS fs, int tms)
 			throws TransportException {
 
 		String user = uri.getUser();

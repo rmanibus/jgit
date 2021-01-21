@@ -9,7 +9,7 @@
  */
 
 //TODO(ms): move to org.eclipse.jgit.ssh.jsch in 6.0
-package org.eclipse.jgit.transport;
+package org.eclipse.jgit.sch.transport;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +18,9 @@ import java.util.List;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.UIKeyboardInteractive;
 import com.jcraft.jsch.UserInfo;
+import org.eclipse.jgit.transport.CredentialItem;
+import org.eclipse.jgit.transport.CredentialsProvider;
+import org.eclipse.jgit.transport.URIish;
 
 /**
  * A JSch {@link com.jcraft.jsch.UserInfo} adapter for a

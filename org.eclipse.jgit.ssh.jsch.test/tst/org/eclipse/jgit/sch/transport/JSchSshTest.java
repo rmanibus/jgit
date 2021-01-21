@@ -9,7 +9,7 @@
  */
 
 //TODO(ms): move to org.eclipse.jgit.ssh.jsch in 6.0
-package org.eclipse.jgit.transport;
+package org.eclipse.jgit.sch.transport;
 
 import static org.junit.Assert.assertTrue;
 
@@ -22,7 +22,10 @@ import java.util.Arrays;
 import org.eclipse.jgit.errors.TransportException;
 import org.eclipse.jgit.junit.ssh.SshTestBase;
 import org.eclipse.jgit.lib.Constants;
-import org.eclipse.jgit.transport.OpenSshConfig.Host;
+import org.eclipse.jgit.transport.CredentialsProvider;
+import org.eclipse.jgit.transport.RemoteSession;
+import org.eclipse.jgit.transport.SshSessionFactory;
+import org.eclipse.jgit.transport.URIish;
 import org.eclipse.jgit.util.FS;
 import org.junit.experimental.theories.Theories;
 import org.junit.runner.RunWith;
@@ -37,13 +40,13 @@ public class JSchSshTest extends SshTestBase {
 	private class TestSshSessionFactory extends JschConfigSessionFactory {
 
 		@Override
-		protected void configure(Host hc, Session session) {
+		protected void configure(OpenSshConfig.Host hc, Session session) {
 			// Nothing
 		}
 
 		@Override
 		public synchronized RemoteSession getSession(URIish uri,
-				CredentialsProvider credentialsProvider, FS fs, int tms)
+													 CredentialsProvider credentialsProvider, FS fs, int tms)
 				throws TransportException {
 			return super.getSession(uri, credentialsProvider, fs, tms);
 		}

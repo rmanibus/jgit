@@ -14,7 +14,7 @@
  */
 
 //TODO(ms): move to org.eclipse.jgit.ssh.jsch in 6.0
-package org.eclipse.jgit.transport;
+package org.eclipse.jgit.sch.transport;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -30,6 +30,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.eclipse.jgit.errors.TransportException;
 import org.eclipse.jgit.internal.transport.jsch.JSchText;
+import org.eclipse.jgit.transport.FtpChannel;
+import org.eclipse.jgit.transport.RemoteSession2;
+import org.eclipse.jgit.transport.URIish;
 import org.eclipse.jgit.util.io.IsolatedOutputStream;
 
 import com.jcraft.jsch.Channel;
@@ -43,7 +46,7 @@ import com.jcraft.jsch.SftpException;
  * Run remote commands using Jsch.
  * <p>
  * This class is the default session implementation using Jsch. Note that
- * {@link org.eclipse.jgit.transport.JschConfigSessionFactory} is used to create
+ * {@link JschConfigSessionFactory} is used to create
  * the actual session passed to the constructor.
  */
 public class JschSession implements RemoteSession2 {
